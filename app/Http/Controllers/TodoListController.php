@@ -40,4 +40,28 @@ class TodoListController extends Controller
 
         return redirect('/todo');
     }
+    public function edit($id)
+    {
+        $todo = TodoList::findOrFail($id);
+       //dd($todo);
+        return view('/todo/form_edit', compact('todo'));
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama' => 'required',
+            'tugas' => 'required',
+            'deadline' => 'required|date',
+        ]);
+
+     $todo = TodoList::findOrFail($id);
+     $todo->update([
+        'nama' => $request->nama,
+        'tugas' => $request->tugas,
+        'deadline' => $request->deadline,
+        'status' => $request->status,
+     ]);
+     return redirect('/todo')->with('success',
+     'Data berhasil diperbarui!');
+    }
 }

@@ -23,7 +23,7 @@
             <td>{{ $item->deadline }}</td>
             <td>{{ $item->status }}</td>
             <td>
-            <a href="/form_edit/{{ $item->id }}">Edit</a>
+            <a href="/todo/form_edit/{{ $item->id }}">Edit</a>
             <form action="/hapus/{{ $item->id }}" method="POST" style="display-inline;">
         @csrf 
         @method('DELETE')

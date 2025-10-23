@@ -14,5 +14,5 @@ Route::get('/todo/tambah',[TodoListController::class, 'tambah']);
 Route::post('/todo/simpan',[TodoListController::class, 'simpan']);
 
 Route::delete('/hapus/{id}',[TodoListController::class, 'hapus']);
-Route::get('/todo/edit/{id}',[TodoListController::class, 'edit']);
-Route::put('/todo/update/{id}',[TodoListController::class, 'update']);
+Route::get('/form_edit/{id}',[TodoListController::class, 'edit']);
+Route::put('/update/{id}',[TodoListController::class, 'update']);

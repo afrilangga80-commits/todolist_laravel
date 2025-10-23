@@ -5,6 +5,7 @@
     </head>
 <body>
     <h1>Daftar Todo List</h1>
+    <a href="/todo/tambah">Tambah Todo</a>
     <table border="1">
         <tr>
             <th>ID</th>

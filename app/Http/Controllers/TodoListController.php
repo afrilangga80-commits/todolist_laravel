@@ -33,4 +33,11 @@ class TodoListController extends Controller
         ]);
         return redirect('/todo');
     }
+    public function hapus($id)
+    {
+        $todo_lists = TodoList::findOrFail($id);
+        $todo_lists->delete();
+
+        return redirect('/todo');
+    }
 }
